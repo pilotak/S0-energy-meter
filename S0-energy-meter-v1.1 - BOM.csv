@@ -1,0 +1,22 @@
+Qty,Value,Package,Description,Part
+2,22uF/50V,PANASONIC_C,Aluminium Capacitor,"C1, C3"
+2,100n,C0805,Ceramic Capacitor,"C2, C5"
+1,100n,C0805,Ceramic Capacitor,C4
+1,10uF/6.3V,C0805,Ceramic Capacitor,C6
+4,KF350-3.5-2P,KF350-3.50-2P,2P Screw terminal 3.5mm pitch,"CON1, CON2, CON3, CON4"
+1,KF301-5.08-2P,KF301-5.08-2P,2P Screw terminal 5.08mm pitch,CON5
+1,SS14,DO214AC,Schottky Barrier Rectifier,D1
+1,1N4148WS,SOD323,Fast Switching Diode,D2
+1,BAT54S,SOT23,Schottky Diodes,D3
+1,MCP16301T-I/CH,SOT23-6,High-Voltage Step-Down Regulator,IC1
+1,DJNR3015-150,L3015,SMD Power Coil,L1
+1,RED,LED0805,SMD LED Diode,LED1
+5,BC817-40SMD,SOT23-BEC,NPN Transistor,"Q1, Q2, Q3, Q4, Q5"
+5,1K,R0805,Resistor,"R1, R4, R7, R12, R15"
+15,10K,R0805,Resistor,"R2, R3, R5, R6, R8, R9, R13, R14, R16, R17, R18, R19, R20, R21, R22"
+1,31K6 1%,R0805,Resistor,R10
+1,10K 1%,R0805,Resistor,R11
+1,820R,R0805,Resistor,R23
+1,DTSM-3,DTSM-3,Push Button,S1
+1,AC-DC_3.6W_24V_150mA,Module,AC-DC regulator,U1
+1,ESP8266-12,ESP-12,WIFI Module,U2
