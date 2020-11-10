@@ -1,0 +1,27 @@
+Qty,Value,Package,Description,Part
+2,22uF/50V,PANASONIC_C,Aluminium Capacitor,"C1, C5"
+1,10uF/6.3V,CT3528,Tantalum Capacitor,C2
+3,100n,C0805,Ceramic Capacitor,"C3, C4, C7"
+1,100n,C0805,Ceramic Capacitor,C6
+1,10uF/6.3V,C0805,Ceramic Capacitor,C8
+6,KF350-3.5-2P,KF350-3.50-2P,Screw terminal 3.5mm pitch,"CON1, CON2, CON3, CON4, CON5, CON6"
+1,SS14,DO214AC,Schottky Barrier Rectifier,D1
+2,UCLAMP3301D.TCT,SOD323,Low Voltage μClamp TVS diode,"D2, D5"
+1,1N4148WS,SOD323,Fast Switching Diode,D3
+1,BAT54S,SOT23,Schottky Diodes,D4
+1,TLP184,SOP04,AC Photocoupler,IC1
+1,74LVC1G14GW.125,SC70-5,Single Schmitt-Trigger Inverter Gate,IC2
+1,MCP16301T-I/CH,SOT23-6,High-Voltage Step-Down Regulator,IC3
+1,G3MB-202P-DC24,G3MB,"SSR Relay Zero Cross 2A, 100-240 VAC",K1
+1,DJNR3015-150,L3015,SMD Power Coil,L1
+1,RED,LED0805,SMD LED Diode,LED1
+2,BC817-40SMD,SOT23-BEC,NPN Transistor,"Q1, Q2"
+1,3K3,R1206,Resistor,R1
+2,1K,R0805,Resistor,"R2, R13"
+10,10K,R0805,Resistor,"R3, R4, R5, R7, R10, R11, R12, R14, R15, R16"
+1,330R,R0805,Resistor,R6
+1,31K6 1%,R0805,Resistor,R8
+1,10K 1%,R0805,Resistor,R9
+1,820R,R0805,Resistor,R17
+1,AC-DC_3.6W_24V_150mA,Module,AC-DC regulator,U1
+1,ESP8266-12,ESP-12,WIFI Module,U2
