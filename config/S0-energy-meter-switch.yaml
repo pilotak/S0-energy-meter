@@ -1,0 +1,88 @@
+esphome:
+  name: "Energy meter swtich"
+  platform: ESP8266
+  board: esp01_1m
+  esp8266_restore_from_flash: True
+
+wifi:
+  fast_connect: true
+  networks:
+  - ssid: !secret ssid
+    password: !secret password
+
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+  - platform: pulse_counter
+    pin: GPIO13
+    name: "Power consumption 1"
+    id: power1
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 1"
+    icon: "mdi:current-ac"
+    power_id: power1
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+output:
+  - platform: gpio
+    pin: GPIO4
+    id: relay
+
+light:
+  - platform: binary
+    name: "Light 1"
+    id: light1
+    output: relay
+
+binary_sensor:
+  - platform: status
+    name: "Energy meter switch: status"
+
+  - platform: gpio
+    name: "Doorbell"
+    pin:
+      number: GPIO16
+      inverted: False
+
+  - platform: gpio
+    name: "Door sensor"
+    device_class: door
+    pin:
+      number: GPIO14
+      inverted: True
+
+  - platform: gpio
+    name: "Switch 1"
+    on_press:
+      then:
+        - light.turn_on: light1
+    on_release:
+      then:
+        - light.turn_off: light1
+    pin:
+      number: GPIO12
+      inverted: True
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    timezone: "Europe/Prague"
+    
+status_led:
+  pin:
+    number: GPIO15

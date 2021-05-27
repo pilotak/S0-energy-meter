@@ -1,0 +1,132 @@
+esphome:
+  name: "Energy meter"
+  platform: ESP8266
+  board: esp01_1m
+  esp8266_restore_from_flash: True
+
+wifi:
+  fast_connect: true
+  networks:
+  - ssid: !secret ssid
+    password: !secret password
+
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+  - platform: pulse_counter
+    pin: GPIO13
+    name: "Power consumption 1"
+    id: power1
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: pulse_counter
+    pin: GPIO12
+    name: "Power consumption 2"
+    id: power2
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: pulse_counter
+    pin: GPIO14
+    name: "Power consumption 3"
+    id: power3
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: pulse_counter
+    pin: GPIO14
+    name: "Power consumption 4"
+    id: power4
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: pulse_counter
+    pin: GPIO14
+    name: "Power consumption 5"
+    id: power5
+    unit_of_measurement: 'Wh'
+    internal_filter: 10ms
+    filters:
+      - multiply: 16.66666666666
+    count_mode:
+      rising_edge: DISABLE
+      falling_edge: INCREMENT
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 1"
+    icon: "mdi:current-ac"
+    power_id: power1
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 2"
+    icon: "mdi:current-ac"
+    power_id: power2
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 3"
+    icon: "mdi:current-ac"
+    power_id: power3
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 4"
+    icon: "mdi:current-ac"
+    power_id: power4
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "Daily power consumption 5"
+    icon: "mdi:current-ac"
+    power_id: power5
+    unit_of_measurement: 'kWh'
+    filters:
+      - multiply: 0.001
+
+binary_sensor:
+  - platform: status
+    name: "Energy meter: status"
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    timezone: "Europe/Prague"
+    
+status_led:
+  pin:
+    number: GPIO15
